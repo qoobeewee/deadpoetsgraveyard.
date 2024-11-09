@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead Poest's Graveyard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dead Poet's Graveyard</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Admins</a></li>
+            <li><a href="portfolio.html">Poetries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="portfolio">
+        <br>
+        <h2>Our Poetries</h2>
+        <div class="portfolio-container">
+
+            <div class="portfolio-item" onclick="openModal('images/poem8.jpg', ['it does feel like the inner child in',
+'me is still breathing with me inside,',
+'but is hidden beneath the ashes',
+'of this bygone soul of mine.',
+'waiting to be lifted, to glimpse',
+'that hopeful light once more.',
+'perhaps my innocence still lingers,',
+'but is broken like scattered shards.',
+'and each piece of it is what pierces',
+'and wounds the depth of my being.'])">
+                <img src="images/poem8.jpg" alt="Project 8">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem6.jpg', ['nais ko pa ring awitin ang',
+'habang tinutugtog ito',
+'sa regalo mong gitara.',
+'parang kailan lang ay',
+'ikaw lang aking tagahanga,',
+'ang tagapalakpak at ang',
+'siyang pinagaalayan ng kanta.',
+'ngunit ngayon, ang ginugunita',
+'na lamang ay ang mga alaala.',
+'hindi na ikaw ang numero',
+'uno kong tagahanga,',
+'di na rin ikaw ang kaharap',
+'sa tuwing tinutugtog ang gitara.',
+'ang awit na sana ay para sa iyo,',
+'inaawit ko na ngayon sa mga taong',
+'hindi alam ang kahulugan nito.',])">
+                <img src="images/poem6.jpg" alt="Project 6">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem3.jpg', ['even if I deny it to everyone and to myself, at the',
+    'back of my mind, the thought of being left alone',
+    'by the people I trust the most still haunts me at',
+    'night. that constant feeling of abandonment is',
+    'still raging inside my stomach, always trying to',
+    'ignite the flames of hatred and mistrust. just',
+    'because I seem stable on the outside, doesnt',
+    'mean Im already healed. the trauma they have',
+'caused me is still here in my veins, residing within me.',])">
+                <img src="images/poem3.jpg" alt="Project 3">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem4.jpg', ['Poem 4 Descriptionpaano kung sa pagsapit ng bukas ay hindi mo',
+    'na gustuhing gumising na ako ang katabi? ',
+    'paano kung sa paglipas ng oras ay masaid',
+    'na ang pag-ibig na ipinamalas? ',
+    'saan ako tutungo kung sakaling hindi',
+'na ako ang itinitibok ng iyong puso?',])">
+                <img src="images/poem4.jpg" alt="Project 4">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem5.jpg', ['It is incredibly comforting to receive genuine care',
+    'from someone who truly values you. A simple',
+    'question about how we feel has the power to',
+    'calm our inner storms. Knowing that we are',
+    'surrounded by authentic people like that brings',
+    'immense reassurance to us, and it is so good to',
+'love when you are being loved too.',])">
+                <img src="images/poem5.jpg" alt="Project 5">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem2.jpg', ['naalala ko pa rin ang unang',
+'beses na pinanood natin',
+'ang paborito nating pelikula,',
+'kung paanong tumulo ang',
+'luha mo sa kaliwa mong mata',
+'habang ako ay nagpipigil ng tawa.',
+'               ',
+'ang sabi mo sa akin ay hindi ka',
+'magsasawang ulit-ulitin ang bawat',
+'eksena kahit pa ito ay nakakaumay na,',
+'o kahit na malaos ito at makalimutan.',
+'sapagkat walang papantay sa mga',
+'bagay na nagbibigay sa iyo ng saya.',
+
+'pero ito ako ngayon, pinapanood',
+'kung saan lumuha ang iyong mga',
+'mata habang ako sy nagpipigil ng tawa,',
+'ngayon ay ako naman ang lumuluha',
+'habang nanonood mag-isa.',
+])">
+                <img src="images/poem2.jpg" alt="Project 2">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem7.jpg', ['paano ko dudugtungan ang mga talata,',
+     'kung ang lumalabas sa aking pluma ay mga luha?'])">
+                <img src="images/poem7.jpg" alt="Project 7">
+            </div>
+            <div class="portfolio-item" onclick="openModal('images/poem1.jpg', [
+                'who wouldve thought',
+                'that devils can also dance',
+                'in the middle of the rain?',
+'sing their favorite songs at night,',
+'and fall in love like they are',
+'against the heavens and hell.',
+'who would believe that we are',
+'just devils in love, dancing and',
+'laughing in the middle of a',
+'thunderstorm, singing each',
+'others lullaby after making love.',
+            ])">
+                <img src="images/poem1.jpg" alt="Project 1">
+            </div>
+        </div>
+    </section>
+
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="modalImage">
+            <div class="modal-text" id="modalText"></div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Cristine Joy Magnaye. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function openModal(imagePath, textArray) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalText = document.getElementById('modalText');
+
+            modalImage.src = imagePath;
+
+
+            modalText.innerHTML = textArray.join(" ");
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
